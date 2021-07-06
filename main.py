@@ -1,16 +1,26 @@
-# This is a sample Python script.
+import random
+def guess(rand):
+    print("Podaj zgadywaną liczbę:")
+    x=int(input())
+    while(x!=rand):
+        print("źle")
+        if(x>rand):
+            print("Twoja liczba jest za duża")
+        if(x<rand):
+            print("Twoja liczba jest za mała")
+        x=int(input("Podaj liczbę:"))
+    if (x == rand):
+        print("Udało się!\nTwoja liczba to", x,"!")
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def generateRandomNumberToGuess(a,b):
+    rand=random.randint(a, b)
+    guess(rand)
 
+def main():
+    print("Podaj zakres liczb")
+    a=int(input("od:"))
+    b=int(input("od:"))
+    generateRandomNumberToGuess(a,b)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    main()
